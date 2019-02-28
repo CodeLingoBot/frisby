@@ -21,7 +21,7 @@ func (F *Frisby) Expect(foo ExpectFunc) *Frisby {
 	return F
 }
 
-// Checks the response status code
+// ExpectStatus checks the response status code
 func (F *Frisby) ExpectStatus(code int) *Frisby {
 	Global.NumAsserts++
 	status := F.Resp.StatusCode
@@ -32,7 +32,7 @@ func (F *Frisby) ExpectStatus(code int) *Frisby {
 	return F
 }
 
-// Checks for header and if values match
+// ExpectHeader checks for header and if values match
 func (F *Frisby) ExpectHeader(key, value string) *Frisby {
 	Global.NumAsserts++
 	chk_val := F.Resp.Header.Get(key)
@@ -46,7 +46,7 @@ func (F *Frisby) ExpectHeader(key, value string) *Frisby {
 	return F
 }
 
-// Checks the response body for the given string
+// ExpectContent checks the response body for the given string
 func (F *Frisby) ExpectContent(content string) *Frisby {
 	Global.NumAsserts++
 	text, err := F.Resp.Text()

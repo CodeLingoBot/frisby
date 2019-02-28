@@ -198,7 +198,7 @@ func (F *Frisby) SetJson(json interface{}) *Frisby {
 	return F
 }
 
-// Add a file to the Form data for the coming request
+// AddFile adds a file to the Form data for the coming request
 func (F *Frisby) AddFile(filename string) *Frisby {
 	file, err := os.Open(filename)
 	if err != nil {
@@ -213,7 +213,7 @@ func (F *Frisby) AddFile(filename string) *Frisby {
 	return F
 }
 
-// Add a file to the Form data for the coming request
+// AddFileByKey adds a file to the Form data for the coming request
 func (F *Frisby) AddFileByKey(key, filename string) *Frisby {
 	file, err := os.Open(filename)
 	if err != nil {
@@ -277,7 +277,7 @@ func (F *Frisby) AddError(err_str string) *Frisby {
 	return F
 }
 
-// Get the most recent error for the Frisby object
+// Error gets the most recent error for the Frisby object
 //
 // This function should be called last
 func (F *Frisby) Error() error {
@@ -287,7 +287,7 @@ func (F *Frisby) Error() error {
 	return nil
 }
 
-// Get all errors for the Frisby object
+// Errors gets all errors for the Frisby object
 //
 // This function should be called last
 func (F *Frisby) Errors() []error {

@@ -130,7 +130,7 @@ func (G *global_data) SetJson(json interface{}) *global_data {
 	return G
 }
 
-// Add a file to the Gorm data for the coming request
+// AddFile adds a file to the Gorm data for the coming request
 func (G *global_data) AddFile(filename string) *global_data {
 	file, err := os.Open(filename)
 	if err != nil {
@@ -151,7 +151,7 @@ func (G *global_data) AddError(name, err_str string) *global_data {
 	return G
 }
 
-// Get all errors for the global_data object
+// Errors gets all errors for the global_data object
 //
 // This function should be called last
 func (G *global_data) Errors() map[string][]error {
